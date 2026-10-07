@@ -1,12 +1,13 @@
 /* =========================================================
    KLIN GO LAUNDRY
    KEMITRAAN PAGE
-   ========================================================= */
+   STANDARD HEADER: KEUNGGULAN.CSS
+========================================================= */
 
 
 /* =========================================================
    VARIABLES
-   ========================================================= */
+========================================================= */
 
 :root {
     --primary: #43076b;
@@ -16,8 +17,10 @@
     --pink: #e8bfdc;
     --pink-light: #f9eafa;
     --pink-soft: #fdf3fb;
+    --pink-dark: #eac8e1;
 
     --yellow: #f7c928;
+    --yellow-light: #ffe98a;
 
     --white: #ffffff;
 
@@ -32,14 +35,17 @@
     --radius-md: 20px;
     --radius-lg: 32px;
 
-    --shadow-soft: 0 18px 50px rgba(67, 7, 107, 0.08);
-    --shadow-card: 0 12px 35px rgba(67, 7, 107, 0.07);
+    --shadow-soft:
+        0 18px 50px rgba(67, 7, 107, 0.08);
+
+    --shadow-card:
+        0 12px 35px rgba(67, 7, 107, 0.07);
 }
 
 
 /* =========================================================
    RESET
-   ========================================================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -60,7 +66,9 @@ body {
 
     background: var(--white);
     color: var(--text);
+
     line-height: 1.6;
+
     overflow-x: hidden;
 }
 
@@ -74,11 +82,17 @@ a {
     text-decoration: none;
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container {
-    width: min(
-        calc(100% - 80px),
-        var(--container)
-    );
+    width:
+        min(
+            calc(100% - 80px),
+            var(--container)
+        );
 
     margin-inline: auto;
 }
@@ -86,16 +100,20 @@ a {
 
 /* =========================================================
    BUTTON
-   ========================================================= */
+   STANDARD: KEUNGGULAN
+========================================================= */
 
 .btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    gap: 8px;
 
-    min-height: 48px;
-    padding: 0 24px;
+    gap: 9px;
+
+    min-height: 50px;
+
+    padding: 14px 25px;
 
     border-radius: 999px;
 
@@ -105,10 +123,10 @@ a {
     text-decoration: none;
 
     transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .btn:hover {
@@ -118,15 +136,25 @@ a {
 .btn-primary {
     background: var(--primary);
     color: var(--white);
+
+    box-shadow:
+        0 10px 25px
+        rgba(67, 7, 107, 0.20);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
+
+    box-shadow:
+        0 14px 30px
+        rgba(67, 7, 107, 0.25);
 }
 
 .btn-outline {
     border: 1.5px solid var(--primary);
+
     color: var(--primary);
+
     background: transparent;
 }
 
@@ -147,8 +175,8 @@ a {
 
 /* =========================================================
    NAVBAR
-   SAMA DENGAN TENTANG.CSS TERBARU
-   ========================================================= */
+   100% MENGIKUTI STANDAR KEUNGGULAN
+========================================================= */
 
 .navbar {
     position: relative;
@@ -177,15 +205,17 @@ a {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
+    width: 112px;
+    height: 112px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 112px;
-    height: 112px;
 
     flex-shrink: 0;
 }
@@ -200,7 +230,9 @@ a {
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .nav-menu {
     display: flex;
@@ -211,6 +243,8 @@ a {
     gap: 38px;
 
     white-space: nowrap;
+
+    min-width: 0;
 }
 
 .nav-menu a {
@@ -252,9 +286,6 @@ a {
     width: 100%;
 }
 
-
-/* ACTIVE */
-
 .nav-menu a.active {
     color: var(--primary);
     font-weight: 700;
@@ -265,23 +296,34 @@ a {
 }
 
 
-/* CTA NAVBAR */
+/* =========================================================
+   NAVBAR CTA
+========================================================= */
 
 .navbar-button {
     flex-shrink: 0;
+
     white-space: nowrap;
+
+    min-height: 50px;
+
+    padding: 14px 25px;
+
+    font-size: 14px;
 }
 
 
 /* =========================================================
    GENERAL TYPOGRAPHY
-   ========================================================= */
+========================================================= */
 
 .eyebrow {
     display: inline-flex;
+
     align-items: center;
 
     min-height: 38px;
+
     padding: 0 16px;
 
     border-radius: 999px;
@@ -291,13 +333,20 @@ a {
 
     font-size: 12px;
     font-weight: 800;
+
     letter-spacing: 0.4px;
 }
 
 .section-heading h2 {
     margin-top: 18px;
 
-    font-size: clamp(38px, 4vw, 58px);
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            58px
+        );
+
     line-height: 1.04;
 
     letter-spacing: -2px;
@@ -314,7 +363,7 @@ a {
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .partner-hero {
     padding: 80px 0 100px;
@@ -347,7 +396,13 @@ a {
 .partner-hero-content h1 {
     margin-top: 22px;
 
-    font-size: clamp(48px, 5.5vw, 76px);
+    font-size:
+        clamp(
+            48px,
+            5.5vw,
+            76px
+        );
+
     line-height: 0.98;
 
     letter-spacing: -3px;
@@ -372,6 +427,7 @@ a {
     display: flex;
 
     align-items: center;
+
     flex-wrap: wrap;
 
     gap: 14px;
@@ -405,7 +461,7 @@ a {
 
 /* =========================================================
    HERO VISUAL
-   ========================================================= */
+========================================================= */
 
 .partner-hero-visual {
     position: relative;
@@ -413,6 +469,7 @@ a {
     min-height: 540px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -436,7 +493,9 @@ a {
 }
 
 
-/* FLOATING CARDS */
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
 
 .floating-card {
     position: absolute;
@@ -472,6 +531,7 @@ a {
 
     font-size: 10px;
     font-weight: 800;
+
     letter-spacing: 0.8px;
 }
 
@@ -481,6 +541,7 @@ a {
     color: var(--primary);
 
     font-size: 20px;
+
     line-height: 1.2;
 }
 
@@ -512,12 +573,14 @@ a {
     height: 38px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
 
     background: var(--pink-light);
+
     color: var(--primary);
 
     font-weight: 800;
@@ -542,7 +605,7 @@ a {
 
 /* =========================================================
    PACKAGE SECTION
-   ========================================================= */
+========================================================= */
 
 .package-section {
     padding: 100px 0 110px;
@@ -568,6 +631,7 @@ a {
     max-width: 520px;
 
     font-size: 16px;
+
     line-height: 1.8;
 }
 
@@ -575,7 +639,10 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 26px;
 }
@@ -583,7 +650,7 @@ a {
 
 /* =========================================================
    PACKAGE CARD
-   ========================================================= */
+========================================================= */
 
 .package-card {
     position: relative;
@@ -660,6 +727,7 @@ a {
     height: 60px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -698,6 +766,7 @@ a {
 
 .package-card h3 {
     font-size: 28px;
+
     line-height: 1.2;
 }
 
@@ -707,6 +776,7 @@ a {
     color: var(--text-muted);
 
     font-size: 15px;
+
     line-height: 1.8;
 }
 
@@ -714,6 +784,7 @@ a {
     list-style: none;
 
     margin-top: 26px;
+
     padding-top: 24px;
 
     border-top:
@@ -746,6 +817,7 @@ a {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -761,10 +833,11 @@ a {
 
 /* =========================================================
    PACKAGE LINK
-   ========================================================= */
+========================================================= */
 
 .package-link {
     display: inline-flex;
+
     align-items: center;
 
     width: fit-content;
@@ -802,7 +875,7 @@ a {
 
 /* =========================================================
    BENEFIT SECTION
-   ========================================================= */
+========================================================= */
 
 .benefit-section {
     padding: 105px 0;
@@ -825,6 +898,7 @@ a {
     margin: 20px auto 0;
 
     font-size: 16px;
+
     line-height: 1.8;
 }
 
@@ -832,7 +906,10 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
 
     gap: 20px;
 }
@@ -864,6 +941,7 @@ a {
     height: 50px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -879,6 +957,7 @@ a {
 
 .benefit-card h3 {
     font-size: 18px;
+
     line-height: 1.3;
 }
 
@@ -888,13 +967,14 @@ a {
     color: var(--text-muted);
 
     font-size: 14px;
+
     line-height: 1.7;
 }
 
 
 /* =========================================================
    DECISION SECTION
-   ========================================================= */
+========================================================= */
 
 .decision-section {
     padding: 90px 0;
@@ -931,7 +1011,13 @@ a {
 .decision-content h2 {
     margin-top: 17px;
 
-    font-size: clamp(32px, 4vw, 52px);
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            52px
+        );
+
     line-height: 1.05;
 
     letter-spacing: -1.8px;
@@ -958,7 +1044,7 @@ a {
 
 /* =========================================================
    CTA
-   ========================================================= */
+========================================================= */
 
 .partner-cta {
     padding: 0 0 100px;
@@ -999,17 +1085,28 @@ a {
     border-radius: 50%;
 
     background:
-        rgba(255, 255, 255, 0.06);
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
 }
 
 .cta-box > div {
     position: relative;
+
     z-index: 1;
 }
 
 .cta-box .eyebrow {
     background:
-        rgba(255, 255, 255, 0.12);
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
 
     color: var(--white);
 }
@@ -1019,7 +1116,13 @@ a {
 
     margin-top: 18px;
 
-    font-size: clamp(34px, 4vw, 54px);
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            54px
+        );
+
     line-height: 1.05;
 
     letter-spacing: -2px;
@@ -1035,13 +1138,19 @@ a {
     margin-top: 18px;
 
     color:
-        rgba(255, 255, 255, 0.78);
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
 
     line-height: 1.8;
 }
 
 .cta-box .btn {
     position: relative;
+
     z-index: 1;
 
     flex-shrink: 0;
@@ -1050,7 +1159,8 @@ a {
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+   STANDARD WHITE MINIMAL
+========================================================= */
 
 .footer {
     background: #ffffff;
@@ -1096,10 +1206,19 @@ a {
 
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
+   TABLET / DESKTOP RESPONSIVE
+   STANDARD KEUNGGULAN
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 48px),
+                var(--container)
+            );
+    }
 
     .navbar-inner {
         column-gap: 25px;
@@ -1107,6 +1226,10 @@ a {
 
     .nav-menu {
         gap: 22px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
     }
 
     .partner-hero-grid {
@@ -1133,24 +1256,19 @@ a {
 
 
 /* =========================================================
-   TABLET
-   ========================================================= */
+   SMALL LAPTOP / TABLET
+========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
+    /* NAVBAR */
     .navbar-inner {
-        min-height: 90px;
-
         grid-template-columns:
             auto
             1fr
             auto;
-    }
 
-    .logo,
-    .logo img {
-        width: 90px;
-        height: 90px;
+        column-gap: 20px;
     }
 
     .nav-menu {
@@ -1162,8 +1280,29 @@ a {
     }
 
     .navbar-button {
-        padding: 0 18px;
+        min-height: 50px;
+
+        padding: 14px 25px;
+
+        font-size: 14px;
     }
+
+    /* PAGE */
+    .partner-hero-grid {
+        gap: 35px;
+    }
+
+    .package-heading {
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
 
     .partner-hero {
         padding: 65px 0 80px;
@@ -1183,12 +1322,14 @@ a {
 
     .package-heading {
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
     .decision-box,
     .cta-box {
         flex-direction: column;
+
         align-items: flex-start;
     }
 }
@@ -1196,29 +1337,32 @@ a {
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+   HEADER = PERSIS STANDAR KEUNGGULAN
+========================================================= */
 
 @media (max-width: 700px) {
 
     .container {
         width: calc(100% - 24px);
+
         max-width: none;
     }
 
 
     /* =========================
        NAVBAR
-       ========================= */
+    ========================= */
 
     .navbar {
         min-height: auto;
-        padding: 10px 0 12px;
+
+        padding: 10px 0 8px;
     }
 
     .navbar-inner {
         width: calc(100% - 24px);
 
-        min-height: auto;
+        min-height: 0;
 
         display: grid;
 
@@ -1233,7 +1377,7 @@ a {
         align-items: center;
 
         column-gap: 10px;
-        row-gap: 10px;
+        row-gap: 7px;
     }
 
 
@@ -1249,23 +1393,23 @@ a {
     .logo img {
         width: 62px;
         height: 62px;
-
-        object-fit: cover;
     }
 
 
-    /* BUTTON */
+    /* CTA */
 
     .navbar-button {
         grid-area: button;
 
         justify-self: end;
 
-        padding: 10px 14px;
-
         min-height: 38px;
 
+        padding: 10px 14px;
+
         font-size: 10.5px;
+
+        line-height: 1;
 
         white-space: nowrap;
     }
@@ -1281,13 +1425,18 @@ a {
         display: grid;
 
         grid-template-columns:
-            repeat(3, 1fr);
+            repeat(
+                3,
+                1fr
+            );
 
-        gap: 4px;
+        gap: 3px 4px;
 
-        white-space: normal;
+        justify-content: initial;
 
         overflow: visible;
+
+        white-space: normal;
     }
 
     .nav-menu a {
@@ -1296,11 +1445,14 @@ a {
         align-items: center;
         justify-content: center;
 
-        min-height: 30px;
+        min-height: 28px;
 
-        padding: 5px 2px;
+        padding: 4px 2px;
 
         font-size: 10px;
+
+        line-height: 1.2;
+
         font-weight: 600;
 
         white-space: nowrap;
@@ -1310,11 +1462,13 @@ a {
 
     .nav-menu a.active {
         font-weight: 700;
+
         color: var(--primary);
     }
 
     .nav-menu a::after {
         bottom: 0;
+
         height: 2px;
     }
 
@@ -1329,7 +1483,7 @@ a {
 
     /* =========================
        HERO
-       ========================= */
+    ========================= */
 
     .partner-hero {
         padding: 50px 0 70px;
@@ -1357,6 +1511,7 @@ a {
 
     .price-card {
         left: 8px;
+
         bottom: 25px;
 
         width: 195px;
@@ -1370,6 +1525,7 @@ a {
 
     .status-card {
         right: 8px;
+
         top: 25px;
 
         padding: 12px;
@@ -1383,7 +1539,7 @@ a {
 
     /* =========================
        PACKAGE
-       ========================= */
+    ========================= */
 
     .package-section,
     .benefit-section {
@@ -1413,7 +1569,7 @@ a {
 
     /* =========================
        BENEFIT
-       ========================= */
+    ========================= */
 
     .benefit-grid {
         grid-template-columns: 1fr;
@@ -1422,7 +1578,7 @@ a {
 
     /* =========================
        DECISION
-       ========================= */
+    ========================= */
 
     .decision-section {
         padding: 70px 0;
@@ -1439,7 +1595,7 @@ a {
 
     /* =========================
        CTA
-       ========================= */
+    ========================= */
 
     .partner-cta {
         padding-bottom: 70px;
@@ -1456,7 +1612,7 @@ a {
 
     /* =========================
        FOOTER
-       ========================= */
+    ========================= */
 
     .footer-inner {
         min-height: auto;
@@ -1478,13 +1634,9 @@ a {
 
 /* =========================================================
    MOBILE SMALL
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 480px) {
-
-    .navbar-button {
-        padding: 0 13px;
-    }
 
     .partner-hero-content h1 {
         font-size: 39px;
@@ -1492,6 +1644,7 @@ a {
 
     .hero-actions {
         align-items: stretch;
+
         flex-direction: column;
     }
 
@@ -1513,7 +1666,9 @@ a {
 
     .status-card {
         transform: scale(0.9);
-        transform-origin: top right;
+
+        transform-origin:
+            top right;
     }
 
     .package-card {
@@ -1526,6 +1681,7 @@ a {
 
     .package-badge {
         font-size: 9px;
+
         padding: 0 10px;
     }
 
@@ -1536,10 +1692,14 @@ a {
 
 
 /* =========================================================
-   EXTRA SMALL
-   ========================================================= */
+   VERY SMALL PHONE
+========================================================= */
 
 @media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 20px);
+    }
 
     .navbar {
         padding-bottom: 7px;
@@ -1549,6 +1709,7 @@ a {
         width: calc(100% - 20px);
 
         column-gap: 8px;
+
         row-gap: 6px;
     }
 
@@ -1563,16 +1724,20 @@ a {
     }
 
     .navbar-button {
+        min-height: 36px;
+
         padding: 9px 12px;
+
         font-size: 10px;
     }
 
     .nav-menu {
-        gap: 5px 2px;
+        gap: 3px;
     }
 
     .nav-menu a {
         min-height: 27px;
+
         font-size: 9.5px;
     }
 }
