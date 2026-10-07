@@ -9,7 +9,6 @@
 ========================================================= */
 
 :root {
-
     --primary: #43076b;
     --primary-dark: #2d0649;
     --primary-light: #6d2995;
@@ -29,11 +28,8 @@
 
     --container: 1280px;
 
-    --shadow-sm:
-        0 8px 30px rgba(67, 7, 107, 0.08);
-
-    --shadow-md:
-        0 20px 60px rgba(67, 7, 107, 0.12);
+    --shadow-sm: 0 8px 30px rgba(67, 7, 107, 0.08);
+    --shadow-md: 0 20px 60px rgba(67, 7, 107, 0.12);
 }
 
 
@@ -52,7 +48,6 @@ html {
 }
 
 body {
-
     font-family:
         Inter,
         "Segoe UI",
@@ -60,11 +55,8 @@ body {
         sans-serif;
 
     color: var(--text);
-
     background: var(--white);
-
     line-height: 1.6;
-
     overflow-x: hidden;
 }
 
@@ -84,12 +76,10 @@ a {
 ========================================================= */
 
 .container {
-
-    width:
-        min(
-            calc(100% - 80px),
-            var(--container)
-        );
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
 
     margin-inline: auto;
 }
@@ -100,22 +90,18 @@ a {
 ========================================================= */
 
 .btn {
-
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     gap: 9px;
 
     min-height: 50px;
-
     padding: 14px 25px;
 
     border-radius: 999px;
 
     font-size: 14px;
-
     font-weight: 700;
 
     transition:
@@ -130,9 +116,7 @@ a {
 }
 
 .btn-primary {
-
     background: var(--primary);
-
     color: var(--white);
 
     box-shadow:
@@ -141,7 +125,6 @@ a {
 }
 
 .btn-primary:hover {
-
     background: var(--primary-dark);
 
     box-shadow:
@@ -150,9 +133,7 @@ a {
 }
 
 .btn-white {
-
     background: var(--white);
-
     color: var(--primary);
 
     box-shadow:
@@ -167,13 +148,12 @@ a {
 
 /* =========================================================
    NAVBAR
+   STANDARD HEADER
 ========================================================= */
 
 .navbar {
-
     position: relative;
-
-    z-index: 100;
+    z-index: 2000;
 
     background: var(--pink);
 
@@ -183,7 +163,6 @@ a {
 }
 
 .navbar-inner {
-
     min-height: 112px;
 
     display: grid;
@@ -199,15 +178,11 @@ a {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
     width: 112px;
     height: 112px;
 
@@ -215,7 +190,6 @@ a {
 }
 
 .logo img {
-
     width: 112px;
     height: 112px;
 
@@ -225,29 +199,29 @@ a {
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .nav-menu {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 38px;
 
     white-space: nowrap;
+
+    min-width: 0;
 }
 
 .nav-menu a {
-
     position: relative;
 
     color: var(--text);
 
     font-size: 14px;
-
     font-weight: 600;
 
     transition:
@@ -255,17 +229,14 @@ a {
 }
 
 .nav-menu a::after {
-
     content: "";
 
     position: absolute;
 
     left: 0;
-
     bottom: -8px;
 
     width: 0;
-
     height: 2px;
 
     border-radius: 999px;
@@ -277,12 +248,10 @@ a {
 }
 
 .nav-menu a:hover {
-
     color: var(--primary);
 }
 
 .nav-menu a:hover::after {
-
     width: 100%;
 }
 
@@ -290,25 +259,39 @@ a {
 /* ACTIVE */
 
 .nav-menu a.active {
-
     color: var(--primary);
-
     font-weight: 700;
 }
 
 .nav-menu a.active::after {
-
     width: 100%;
 }
 
 
-/* NAVBAR CTA */
+/* =========================================================
+   NAVBAR CTA
+========================================================= */
 
 .navbar-button {
-
     flex-shrink: 0;
 
     white-space: nowrap;
+
+    min-height: 50px;
+    padding: 14px 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE NAV ELEMENTS
+========================================================= */
+
+.menu-toggle,
+.menu-close,
+.menu-overlay {
+    display: none;
 }
 
 
@@ -317,11 +300,9 @@ a {
 ========================================================= */
 
 .section-label {
-
     width: fit-content;
 
     display: inline-flex;
-
     align-items: center;
 
     padding: 9px 16px;
@@ -333,7 +314,6 @@ a {
     color: var(--primary);
 
     font-size: 13px;
-
     font-weight: 700;
 }
 
@@ -343,9 +323,7 @@ a {
 ========================================================= */
 
 .faq-hero {
-
     position: relative;
-
     overflow: hidden;
 
     padding:
@@ -355,33 +333,26 @@ a {
     text-align: center;
 
     background:
-
         radial-gradient(
             circle at 15% 30%,
             rgba(235, 198, 232, 0.45),
             transparent 30%
         ),
-
         radial-gradient(
             circle at 85% 20%,
             rgba(249, 234, 250, 0.9),
             transparent 32%
         ),
-
         var(--white);
 }
 
 .faq-hero-inner {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 }
 
 .faq-hero h1 {
-
     max-width: 850px;
 
     margin-top: 24px;
@@ -403,14 +374,11 @@ a {
 }
 
 .faq-hero h1 span {
-
     display: block;
-
     color: var(--primary-light);
 }
 
 .faq-hero p {
-
     max-width: 650px;
 
     margin-top: 25px;
@@ -418,7 +386,6 @@ a {
     color: var(--text-muted);
 
     font-size: 17px;
-
     line-height: 1.75;
 }
 
@@ -428,7 +395,6 @@ a {
 ========================================================= */
 
 .faq-section {
-
     padding:
         95px 0
         110px;
@@ -437,7 +403,6 @@ a {
 }
 
 .faq-layout {
-
     display: grid;
 
     grid-template-columns:
@@ -450,17 +415,16 @@ a {
 }
 
 
-/* LEFT */
+/* =========================================================
+   FAQ LEFT
+========================================================= */
 
 .faq-heading {
-
     position: sticky;
-
     top: 30px;
 }
 
 .faq-heading h2 {
-
     max-width: 450px;
 
     margin-top: 22px;
@@ -482,14 +446,11 @@ a {
 }
 
 .faq-heading h2 span {
-
     display: block;
-
     color: var(--primary-light);
 }
 
 .faq-heading p {
-
     max-width: 430px;
 
     margin-top: 20px;
@@ -497,12 +458,10 @@ a {
     color: var(--text-muted);
 
     font-size: 15px;
-
     line-height: 1.75;
 }
 
 .faq-heading .btn {
-
     margin-top: 28px;
 }
 
@@ -512,19 +471,18 @@ a {
 ========================================================= */
 
 .faq-list {
-
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
 }
 
 
-/* FAQ ITEM */
+/* =========================================================
+   FAQ ITEM
+========================================================= */
 
 .faq-item {
-
     overflow: hidden;
 
     border:
@@ -541,16 +499,11 @@ a {
 }
 
 .faq-item:hover {
-
     border-color:
         rgba(109, 41, 149, 0.25);
 }
 
-
-/* OPEN */
-
 .faq-item[open] {
-
     border-color:
         rgba(109, 41, 149, 0.28);
 
@@ -559,14 +512,14 @@ a {
 }
 
 
-/* SUMMARY */
+/* =========================================================
+   FAQ SUMMARY
+========================================================= */
 
 .faq-item summary {
-
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 25px;
@@ -581,16 +534,12 @@ a {
     color: var(--text);
 
     font-size: 16px;
-
     font-weight: 700;
 
     transition:
         color 0.25s ease,
         background 0.25s ease;
 }
-
-
-/* HILANGKAN DEFAULT ARROW */
 
 .faq-item summary::-webkit-details-marker {
     display: none;
@@ -604,7 +553,6 @@ a {
 /* QUESTION */
 
 .faq-item summary span {
-
     flex: 1;
 }
 
@@ -612,7 +560,6 @@ a {
 /* PLUS */
 
 .faq-item summary b {
-
     width: 34px;
     height: 34px;
 
@@ -630,7 +577,6 @@ a {
     color: var(--primary);
 
     font-size: 20px;
-
     font-weight: 500;
 
     line-height: 1;
@@ -644,12 +590,10 @@ a {
 /* OPEN ICON */
 
 .faq-item[open] summary b {
-
     transform:
         rotate(45deg);
 
     background: var(--primary);
-
     color: var(--white);
 }
 
@@ -657,22 +601,21 @@ a {
 /* OPEN QUESTION */
 
 .faq-item[open] summary {
-
     color: var(--primary);
 }
 
 
-/* ANSWER */
+/* =========================================================
+   FAQ ANSWER
+========================================================= */
 
 .faq-answer {
-
     padding:
         0 26px
         25px;
 }
 
 .faq-answer p {
-
     max-width: 720px;
 
     padding-top: 20px;
@@ -684,7 +627,6 @@ a {
     color: var(--text-muted);
 
     font-size: 14px;
-
     line-height: 1.8;
 }
 
@@ -694,7 +636,6 @@ a {
 ========================================================= */
 
 .faq-cta {
-
     padding:
         0 0
         100px;
@@ -703,11 +644,9 @@ a {
 }
 
 .cta-box {
-
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 50px;
@@ -726,7 +665,6 @@ a {
 }
 
 .cta-box h2 {
-
     max-width: 700px;
 
     margin-top: 18px;
@@ -748,14 +686,11 @@ a {
 }
 
 .cta-box h2 span {
-
     display: block;
-
     color: var(--primary-light);
 }
 
 .cta-box p {
-
     margin-top: 12px;
 
     color: var(--text-muted);
@@ -764,7 +699,6 @@ a {
 }
 
 .cta-box .btn {
-
     flex-shrink: 0;
 }
 
@@ -774,7 +708,6 @@ a {
 ========================================================= */
 
 .footer {
-
     background: #ffffff;
 
     border-top:
@@ -783,43 +716,35 @@ a {
 }
 
 .footer-inner {
-
     min-height: 105px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
 }
 
 .footer strong {
-
     display: block;
 
     color: #43076b;
 
     font-size: 16px;
-
     font-weight: 800;
 }
 
 .footer p {
-
     color: #706579;
-
     font-size: 12px;
 }
 
 .footer-inner > div p {
-
     margin-top: 3px;
 }
 
 .footer-copy {
-
     text-align: right;
 }
 
@@ -828,27 +753,72 @@ a {
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1000px) {
+
+/* =========================================================
+   1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 48px),
+                var(--container)
+            );
+    }
+
+    .navbar-inner {
+        column-gap: 30px;
+    }
+
+    .nav-menu {
+        gap: 28px;
+    }
+
+    .faq-layout {
+        gap: 70px;
+    }
+}
+
+
+/* =========================================================
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
 
     .navbar-inner {
         column-gap: 25px;
     }
 
     .nav-menu {
-        gap: 24px;
+        gap: 22px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
     }
 
     .faq-layout {
+        gap: 55px;
+    }
+}
 
+
+/* =========================================================
+   1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .faq-layout {
         grid-template-columns: 1fr;
-
         gap: 55px;
     }
 
     .faq-heading {
-
         position: static;
-
         max-width: 700px;
     }
 
@@ -866,214 +836,390 @@ a {
 }
 
 
+/* =========================================================
+   900px
+========================================================= */
+
 @media (max-width: 900px) {
 
     .navbar-inner {
-
         min-height: 90px;
-
         column-gap: 20px;
     }
 
     .logo,
     .logo img {
-
         width: 90px;
         height: 90px;
     }
 
     .nav-menu {
-
-        gap: 16px;
+        gap: 15px;
     }
 
     .nav-menu a {
-
         font-size: 12px;
     }
 
     .navbar-button {
-
-        padding:
-            13px 18px;
-
+        min-height: 46px;
+        padding: 13px 18px;
         font-size: 12px;
     }
 
     .faq-hero {
-
         padding:
             80px 0;
     }
 
     .cta-box {
-
         flex-direction: column;
-
         align-items: flex-start;
     }
 }
 
 
+/* =========================================================
+   700px
+   MOBILE NAVBAR
+========================================================= */
+
 @media (max-width: 700px) {
 
     .container {
-
         width:
             min(
-                calc(100% - 32px),
+                calc(100% - 24px),
                 var(--container)
             );
     }
 
 
-    /* NAVBAR */
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .navbar {
+        position: relative;
+        z-index: 2000;
+
+        padding: 10px 0 8px;
+    }
 
     .navbar-inner {
+        width: calc(100% - 24px);
 
-        min-height: auto;
+        min-height: 0;
 
-        padding:
-            12px 0;
+        display: flex;
 
-        grid-template-columns:
-            auto
-            auto;
-
+        align-items: center;
         justify-content: space-between;
 
-        row-gap: 15px;
+        column-gap: 12px;
     }
 
-    .logo,
+
+    /* =====================================================
+       MOBILE LOGO
+    ===================================================== */
+
+    .logo {
+        width: 62px;
+        height: 62px;
+    }
+
     .logo img {
-
-        width: 72px;
-        height: 72px;
+        width: 62px;
+        height: 62px;
     }
 
-    .nav-menu {
 
-        grid-column:
-            1 / -1;
+    /* =====================================================
+       HAMBURGER
+    ===================================================== */
 
-        grid-row: 2;
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
 
-        width: 100%;
+        display: flex;
 
-        justify-content:
-            flex-start;
-
-        overflow-x: auto;
-
-        padding-bottom: 5px;
-
-        gap: 24px;
-    }
-
-    .nav-menu a {
+        align-items: center;
+        justify-content: center;
 
         flex-shrink: 0;
 
-        font-size: 12px;
+        border: 0;
+        border-radius: 12px;
+
+        background: var(--primary);
+        color: var(--white);
+
+        font-size: 28px;
+        line-height: 1;
+
+        cursor: pointer;
+
+        transition:
+            background 0.25s ease,
+            transform 0.25s ease;
     }
+
+    .menu-toggle:hover {
+        background: var(--primary-dark);
+        transform: translateY(-1px);
+    }
+
+
+    /* =====================================================
+       DESKTOP CTA HIDDEN
+    ===================================================== */
 
     .navbar-button {
-
-        min-height: 42px;
-
-        padding:
-            0 16px;
-
-        font-size: 12px;
+        display: none;
     }
 
 
-    /* HERO */
+    /* =====================================================
+       MOBILE SIDE MENU
+    ===================================================== */
+
+    .nav-menu {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: min(82vw, 340px);
+        height: 100dvh;
+
+        margin: 0;
+        padding:
+            90px 25px
+            30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        background: var(--primary);
+
+        box-shadow:
+            -15px 0 40px
+            rgba(45, 6, 73, 0.20);
+
+        transform: translateX(100%);
+
+        visibility: hidden;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        overflow-y: auto;
+
+        z-index: 3000;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       CLOSE BUTTON
+    ===================================================== */
+
+    .menu-close {
+        position: absolute;
+
+        top: 20px;
+        right: 20px;
+
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 0;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.12);
+
+        color: var(--white);
+
+        font-size: 28px;
+        font-weight: 300;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        transition:
+            background 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .menu-close:hover {
+        background: rgba(255, 255, 255, 0.20);
+        transform: rotate(90deg);
+    }
+
+
+    /* =====================================================
+       MOBILE LINKS
+    ===================================================== */
+
+    .nav-menu a {
+        width: 100%;
+
+        display: block;
+
+        padding: 15px 0;
+
+        color: var(--white);
+
+        font-size: 18px;
+        font-weight: 600;
+
+        white-space: normal;
+    }
+
+    .nav-menu a::after {
+        display: none;
+    }
+
+    .nav-menu a:hover {
+        color: var(--pink);
+    }
+
+    .nav-menu a.active {
+        color: var(--white);
+        font-weight: 700;
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ===================================================== */
+
+    .menu-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        display: block;
+
+        background:
+            rgba(37, 21, 50, 0.55);
+
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 2500;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .faq-hero {
-
         padding:
             65px 0
             70px;
     }
 
     .faq-hero h1 {
-
         font-size: 43px;
-
         letter-spacing: -2px;
     }
 
     .faq-hero p {
-
         font-size: 15px;
     }
 
 
-    /* FAQ */
+    /* =====================================================
+       FAQ
+    ===================================================== */
 
     .faq-section {
-
         padding:
             70px 0
             80px;
     }
 
     .faq-heading h2 {
-
         font-size: 40px;
-
         letter-spacing: -1.5px;
     }
 
     .faq-item summary {
-
-        padding:
-            20px;
-    }
-
-    .faq-item summary {
-
+        padding: 20px;
         font-size: 14px;
     }
 
     .faq-answer {
-
         padding:
             0 20px
             20px;
     }
 
     .faq-answer p {
-
         font-size: 13px;
     }
 
 
-    /* CTA */
+    /* =====================================================
+       CTA
+    ===================================================== */
 
     .faq-cta {
-
         padding-bottom: 70px;
     }
 
     .cta-box {
-
         padding:
             38px 28px;
     }
 
     .cta-box h2 {
-
         font-size: 38px;
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .footer-inner {
-
         min-height: auto;
 
         padding:
@@ -1087,309 +1233,81 @@ a {
     }
 
     .footer-copy {
-
         text-align: left;
     }
 }
 
 
+/* =========================================================
+   480px
+========================================================= */
+
 @media (max-width: 480px) {
 
     .faq-hero h1 {
-
         font-size: 38px;
     }
 
     .faq-heading h2 {
-
         font-size: 35px;
     }
 
     .cta-box h2 {
-
         font-size: 35px;
     }
 
     .faq-item summary b {
-
         width: 30px;
         height: 30px;
 
         font-size: 18px;
     }
-
-    /* =====================================================
-   MOBILE HEADER - STANDARD SEMUA HALAMAN
-   ===================================================== */
-
-@media (max-width: 700px) {
-
-  .navbar {
-    min-height: auto;
-    padding: 12px 0 14px;
-  }
-
-  .navbar-inner {
-    width: min(calc(100% - 24px), var(--container));
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "logo button"
-      "menu menu";
-    align-items: center;
-    column-gap: 12px;
-    row-gap: 12px;
-  }
-
-  /* LOGO */
-  .logo {
-    grid-area: logo;
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    width: 68px;
-    height: 68px;
-    object-fit: cover;
-  }
-
-  /* TOMBOL NAVBAR */
-  .navbar-button {
-    grid-area: button;
-    justify-self: end;
-
-    padding: 11px 16px;
-    min-height: 40px;
-
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    border-radius: 999px;
-  }
-
-  /* MENU */
-  .nav-menu {
-    grid-area: menu;
-
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px 4px;
-
-    justify-content: initial;
-    align-items: center;
-
-    overflow: visible;
-  }
-
-  .nav-menu a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 32px;
-    padding: 5px 2px;
-
-    font-size: 10.5px;
-    font-weight: 600;
-
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .nav-menu a::after {
-    bottom: 0;
-    height: 2px;
-  }
-
-  .nav-menu a.active {
-    font-weight: 700;
-  }
-
-  /* Supaya link ke-4 dan ke-5 tetap rapi */
-  .nav-menu a:nth-child(4) {
-    grid-column: 1;
-  }
-
-  .nav-menu a:nth-child(5) {
-    grid-column: 2;
-  }
 }
 
 
-/* HP SANGAT KECIL */
+/* =========================================================
+   380px
+========================================================= */
+
 @media (max-width: 380px) {
 
-  .navbar-inner {
-    width: calc(100% - 20px);
-    column-gap: 8px;
-  }
-
-  .logo img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .navbar-button {
-    padding: 10px 13px;
-    font-size: 10px;
-  }
-
-  .nav-menu {
-    gap: 5px 2px;
-  }
-
-  .nav-menu a {
-    font-size: 9.5px;
-  }
-}
-
-/* =====================================================
-   STANDARD MOBILE HEADER
-   Samakan dengan Home & Tentang
-   ===================================================== */
-
-@media (max-width: 700px) {
-
-    .navbar {
-        min-height: auto !important;
-        height: auto !important;
-        padding: 10px 0 8px !important;
-    }
-
     .navbar-inner {
-        width: calc(100% - 24px) !important;
-
-        min-height: 0 !important;
-        height: auto !important;
-
-        padding: 0 !important;
-        margin-inline: auto !important;
-
-        display: grid !important;
-
-        grid-template-columns: auto 1fr !important;
-
-        grid-template-areas:
-            "logo button"
-            "menu menu" !important;
-
-        align-items: center !important;
-
-        column-gap: 10px !important;
-        row-gap: 7px !important;
+        width: calc(100% - 20px);
     }
 
-    .logo {
-        grid-area: logo !important;
-
-        width: 62px !important;
-        height: 62px !important;
-    }
-
+    .logo,
     .logo img {
-        width: 62px !important;
-        height: 62px !important;
+        width: 58px;
+        height: 58px;
     }
 
-    .navbar-button {
-        grid-area: button !important;
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
 
-        justify-self: end !important;
-
-        min-height: 38px !important;
-
-        padding: 10px 14px !important;
-
-        font-size: 10.5px !important;
-
-        white-space: nowrap !important;
+        font-size: 26px;
     }
 
     .nav-menu {
-        grid-area: menu !important;
+        width: 84vw;
 
-        width: 100% !important;
-
-        height: auto !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        display: grid !important;
-
-        grid-template-columns: repeat(3, 1fr) !important;
-
-        gap: 3px 4px !important;
-
-        overflow: visible !important;
-
-        white-space: normal !important;
+        padding-left: 22px;
+        padding-right: 22px;
     }
 
     .nav-menu a {
-        display: flex !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        min-height: 28px !important;
-
-        padding: 4px 2px !important;
-
-        font-size: 10px !important;
-
-        line-height: 1.2 !important;
-
-        white-space: nowrap !important;
+        font-size: 17px;
     }
 
-    .nav-menu a:nth-child(4) {
-        grid-column: 1 !important;
+    .faq-hero h1 {
+        font-size: 35px;
     }
 
-    .nav-menu a:nth-child(5) {
-        grid-column: 2 !important;
+    .faq-heading h2 {
+        font-size: 32px;
     }
 
-    .nav-menu a.active {
-        font-weight: 700 !important;
+    .cta-box h2 {
+        font-size: 32px;
     }
-}
-
-
-@media (max-width: 380px) {
-
-    .navbar {
-        padding-bottom: 7px !important;
-    }
-
-    .navbar-inner {
-        width: calc(100% - 20px) !important;
-        row-gap: 6px !important;
-    }
-
-    .logo {
-        width: 58px !important;
-        height: 58px !important;
-    }
-
-    .logo img {
-        width: 58px !important;
-        height: 58px !important;
-    }
-
-    .navbar-button {
-        padding: 9px 12px !important;
-        font-size: 10px !important;
-    }
-
-    .nav-menu a {
-        min-height: 27px !important;
-        font-size: 9.5px !important;
-    }
-}
-
 }
