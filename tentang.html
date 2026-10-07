@@ -19,7 +19,7 @@
 
     <!-- =====================================================
          HEADER / NAVBAR
-    ====================================================== -->
+         ===================================================== -->
 
     <header class="navbar">
 
@@ -34,8 +34,28 @@
             </a>
 
 
+            <!-- HAMBURGER MOBILE -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
             <!-- NAVIGATION -->
             <nav class="nav-menu">
+
+                <!-- CLOSE BUTTON MOBILE -->
+                <button
+                    class="menu-close"
+                    type="button"
+                    aria-label="Tutup menu"
+                >
+                    ×
+                </button>
 
                 <a href="tentang.html" class="active">
                     Tentang KlinGo
@@ -60,30 +80,35 @@
             </nav>
 
 
-            <!-- CTA -->
-                        <a
-                            href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
-                            class="btn btn-primary navbar-button"
-                            target="_blank"
-                        >
-                            Konsultasi Sekarang
-                        </a>
+            <!-- CTA DESKTOP -->
+            <a
+                href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
+                class="btn btn-primary navbar-button"
+                target="_blank"
+                rel="noopener"
+            >
+                Konsultasi Sekarang
+            </a>
+
         </div>
+
+
+        <!-- MOBILE OVERLAY -->
+        <div class="menu-overlay"></div>
 
     </header>
 
 
-
     <!-- =====================================================
          MAIN CONTENT
-    ====================================================== -->
+         ===================================================== -->
 
     <main>
 
 
         <!-- =================================================
              HERO TENTANG
-        ================================================== -->
+             ================================================= -->
 
         <section class="about-hero">
 
@@ -126,10 +151,11 @@
                             href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
                             class="btn btn-primary hero-button"
                             target="_blank"
+                            rel="noopener"
                         >
                             Konsultasi Sekarang
                         </a>
-                        
+
                     </div>
 
 
@@ -150,12 +176,12 @@
                 </div>
 
 
-
                 <!-- RIGHT VISUAL -->
 
                 <div class="about-hero-visual">
 
                     <div class="visual-glow"></div>
+
 
                     <div class="about-image-wrapper">
 
@@ -206,14 +232,14 @@
         </section>
 
 
-
         <!-- =================================================
              TENTANG KLINGO
-        ================================================== -->
+             ================================================== -->
 
         <section class="about-intro">
 
             <div class="container intro-container">
+
 
                 <div class="intro-heading">
 
@@ -250,10 +276,9 @@
         </section>
 
 
-
         <!-- =================================================
              DUKUNGAN BISNIS
-        ================================================== -->
+             ================================================== -->
 
         <section class="support-section">
 
@@ -282,7 +307,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div class="support-grid">
@@ -317,7 +341,6 @@
                     </article>
 
 
-
                     <!-- CARD 2 -->
 
                     <article class="support-card">
@@ -345,7 +368,6 @@
                         </p>
 
                     </article>
-
 
 
                     <!-- CARD 3 -->
@@ -383,10 +405,9 @@
         </section>
 
 
-
         <!-- =================================================
              CTA
-        ================================================== -->
+             ================================================== -->
 
         <section class="about-cta">
 
@@ -408,13 +429,15 @@
                     </div>
 
 
-                        <a
-                            href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
-                            class="btn btn-primary hero-button"
-                            target="_blank"
-                        >
-                            Konsultasi Sekarang
-                        </a>
+                    <a
+                        href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
+                        class="btn btn-primary hero-button"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Konsultasi Sekarang
+                    </a>
+
                 </div>
 
             </div>
@@ -424,26 +447,39 @@
     </main>
 
 
-
     <!-- =====================================================
          FOOTER
-    ====================================================== -->
+         ===================================================== -->
 
-<footer class="footer">
-    <div class="container footer-inner">
+    <footer class="footer">
 
-        <div>
-            <strong>KlinGo Laundry</strong>
-            <p>Solusi bisnis laundry bersama mitra.</p>
+        <div class="container footer-inner">
+
+            <div>
+
+                <strong>KlinGo Laundry</strong>
+
+                <p>
+                    Solusi bisnis laundry bersama mitra.
+                </p>
+
+            </div>
+
+
+            <p class="footer-copy">
+                © 2026 KlinGo Laundry. All rights reserved.
+            </p>
+
         </div>
 
-        <p class="footer-copy">
-            © 2026 KlinGo Laundry. All rights reserved.
-        </p>
+    </footer>
 
-    </div>
-</footer>
+
+    <!-- =====================================================
+         MOBILE MENU SCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
 
 </body>
-
 </html>
