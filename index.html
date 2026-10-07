@@ -17,42 +17,71 @@
 <body>
 
     <!-- =========================
-         NAVBAR
-    ========================== -->
-    <header class="navbar">
+     NAVBAR
+========================== -->
 
-        <div class="container navbar-inner">
+<header class="navbar">
 
-            <!-- LOGO -->
-            <a href="#" class="logo">
-                <img
-                    src="assets/muson.jpg"
-                    alt="Muson KlinGo Laundry"
-                >
-            </a>
+    <div class="container navbar-inner">
 
-            <!-- NAVIGATION -->
-            <nav class="nav-menu">
+        <!-- LOGO -->
+        <a href="#" class="logo">
+            <img
+                src="assets/muson.jpg"
+                alt="Muson KlinGo Laundry"
+            >
+        </a>
 
-                <a href="tentang.html">Tentang KlinGo</a>
-                <a href="kemitraan.html">Kemitraan</a>
-                <a href="keunggulan.html">Keunggulan</a>
-                <a href="carakerja.html">Cara Kerja</a>
-                <a href="faq.html">FAQ</a>
 
-            </nav>
+        <!-- HAMBURGER MOBILE -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Buka menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
-            <!-- CTA -->
-            <a
-    href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
-    class="btn btn-primary navbar-button"
-    target="_blank"
->
-    Konsultasi Sekarang
-</a>
-        </div>
 
-    </header>
+        <!-- NAVIGATION -->
+        <nav class="nav-menu">
+
+            <!-- CLOSE BUTTON MOBILE -->
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Tutup menu"
+            >
+                ×
+            </button>
+
+            <a href="tentang.html">Tentang KlinGo</a>
+            <a href="kemitraan.html">Kemitraan</a>
+            <a href="keunggulan.html">Keunggulan</a>
+            <a href="carakerja.html">Cara Kerja</a>
+            <a href="faq.html">FAQ</a>
+
+        </nav>
+
+
+        <!-- CTA DESKTOP -->
+        <a
+            href="https://wa.me/6281385256074?text=Halo%20Muson%20Klin%20Go%2C%20saya%20ingin%20konsultasi%20mengenai%20paket%20usaha%20laundry."
+            class="btn btn-primary navbar-button"
+            target="_blank"
+            rel="noopener"
+        >
+            Konsultasi Sekarang
+        </a>
+
+    </div>
+
+
+    <!-- OVERLAY MOBILE -->
+    <div class="menu-overlay"></div>
+
+</header>
 
 
     <!-- =========================
@@ -292,7 +321,7 @@
     <!-- =========================
          JAVASCRIPT
     ========================== -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
