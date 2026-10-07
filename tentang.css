@@ -1,8 +1,11 @@
 /* =========================================================
    KLIN GO LAUNDRY
    TENTANG PAGE
-   CLEAN VERSION
-   STANDARD NAVBAR = KEUNGGULAN.CSS
+   CLEAN FINAL VERSION
+
+   STANDARD NAVBAR:
+   - DESKTOP = KEUNGGULAN
+   - MOBILE = HAMBURGER
    ========================================================= */
 
 
@@ -61,6 +64,10 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -69,6 +76,10 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    font-family: inherit;
 }
 
 
@@ -84,7 +95,6 @@ a {
 
 /* =========================================================
    BUTTON
-   STANDARD — SAMA DENGAN KEUNGGULAN
    ========================================================= */
 
 .btn {
@@ -154,7 +164,7 @@ a {
 
 /* =========================================================
    NAVBAR
-   STANDARD — SAMA DENGAN KEUNGGULAN
+   DESKTOP STANDARD
    ========================================================= */
 
 .navbar {
@@ -165,7 +175,9 @@ a {
 
     background: var(--pink);
 
-    border-bottom: 1px solid rgba(67, 7, 107, 0.08);
+    border-bottom:
+        1px solid
+        rgba(67, 7, 107, 0.08);
 }
 
 .navbar-inner {
@@ -174,7 +186,11 @@ a {
     min-height: 112px;
 
     display: grid;
-    grid-template-columns: auto 1fr auto;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
 
     align-items: center;
 
@@ -184,7 +200,9 @@ a {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .logo {
     width: 112px;
@@ -202,14 +220,18 @@ a {
     height: 112px;
 
     display: block;
+
     object-fit: cover;
 }
 
 
-/* MENU */
+/* =========================================================
+   DESKTOP MENU
+   ========================================================= */
 
 .nav-menu {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -229,7 +251,8 @@ a {
 
     white-space: nowrap;
 
-    transition: color 0.25s ease;
+    transition:
+        color 0.25s ease;
 }
 
 .nav-menu a::after {
@@ -247,7 +270,8 @@ a {
 
     background: var(--primary);
 
-    transition: width 0.25s ease;
+    transition:
+        width 0.25s ease;
 }
 
 .nav-menu a:hover {
@@ -268,16 +292,32 @@ a {
 }
 
 
-/* NAVBAR BUTTON */
+/* =========================================================
+   NAVBAR CTA
+   ========================================================= */
 
 .navbar-button {
     flex-shrink: 0;
+
     white-space: nowrap;
 
     min-height: 50px;
+
     padding: 14px 25px;
 
     font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE MENU ELEMENTS
+   DESKTOP = HIDDEN
+   ========================================================= */
+
+.menu-toggle,
+.menu-close,
+.menu-overlay {
+    display: none;
 }
 
 
@@ -296,6 +336,7 @@ a {
     border-radius: 999px;
 
     background: var(--pink-light);
+
     color: var(--primary);
 
     font-size: 13px;
@@ -309,6 +350,7 @@ a {
 
 .about-hero {
     position: relative;
+
     overflow: hidden;
 
     background:
@@ -359,9 +401,15 @@ a {
 
     color: var(--text);
 
-    font-size: clamp(48px, 5vw, 72px);
+    font-size:
+        clamp(
+            48px,
+            5vw,
+            72px
+        );
 
     line-height: 1.02;
+
     letter-spacing: -2.8px;
 
     font-weight: 800;
@@ -369,12 +417,15 @@ a {
 
 .about-hero-content h1 span {
     display: block;
+
     color: var(--text);
 }
 
 .about-hero-content h1 strong {
     display: block;
+
     color: var(--primary-light);
+
     font-weight: 800;
 }
 
@@ -421,12 +472,15 @@ a {
     margin-top: 38px;
     padding-top: 25px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid
+        var(--border);
 }
 
 .hero-bottom-info div {
     display: flex;
     flex-direction: column;
+
     gap: 2px;
 }
 
@@ -439,6 +493,7 @@ a {
 
 .hero-bottom-info span {
     color: var(--text-muted);
+
     font-size: 12px;
 }
 
@@ -468,7 +523,13 @@ a {
 
     border-radius: 50%;
 
-    background: rgba(249, 234, 250, 0.85);
+    background:
+        rgba(
+            249,
+            234,
+            250,
+            0.85
+        );
 
     filter: blur(2px);
 
@@ -477,6 +538,7 @@ a {
 
 .about-image-wrapper {
     position: relative;
+
     z-index: 2;
 
     width: min(100%, 520px);
@@ -488,7 +550,13 @@ a {
     transform: rotate(-1deg);
 
     box-shadow:
-        0 20px 60px rgba(67, 7, 107, 0.12);
+        0 20px 60px
+        rgba(
+            67,
+            7,
+            107,
+            0.12
+        );
 }
 
 .about-image {
@@ -522,11 +590,20 @@ a {
 
     background: var(--white);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 18px;
 
     box-shadow:
-        0 15px 40px rgba(67, 7, 107, 0.13);
+        0 15px 40px
+        rgba(
+            67,
+            7,
+            107,
+            0.13
+        );
 
     transform: rotate(3deg);
 }
@@ -544,6 +621,7 @@ a {
     border-radius: 50%;
 
     background: var(--pink-light);
+
     color: var(--primary);
 
     font-size: 18px;
@@ -553,6 +631,7 @@ a {
     display: block;
 
     color: var(--text-muted);
+
     font-size: 10px;
 }
 
@@ -589,11 +668,20 @@ a {
 
     background: var(--white);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 18px;
 
     box-shadow:
-        0 15px 40px rgba(67, 7, 107, 0.13);
+        0 15px 40px
+        rgba(
+            67,
+            7,
+            107,
+            0.13
+        );
 }
 
 .partner-icon {
@@ -609,6 +697,7 @@ a {
     border-radius: 50%;
 
     background: var(--pink-light);
+
     color: var(--primary);
 
     font-size: 16px;
@@ -663,9 +752,15 @@ a {
 
     color: var(--text);
 
-    font-size: clamp(40px, 4vw, 58px);
+    font-size:
+        clamp(
+            40px,
+            4vw,
+            58px
+        );
 
     line-height: 1.08;
+
     letter-spacing: -2px;
 
     font-weight: 800;
@@ -673,6 +768,7 @@ a {
 
 .intro-heading h2 span {
     display: block;
+
     color: var(--primary-light);
 }
 
@@ -686,6 +782,7 @@ a {
     color: var(--text-muted);
 
     font-size: 16px;
+
     line-height: 1.8;
 }
 
@@ -728,9 +825,15 @@ a {
 
     margin-top: 22px;
 
-    font-size: clamp(42px, 4vw, 60px);
+    font-size:
+        clamp(
+            42px,
+            4vw,
+            60px
+        );
 
     line-height: 1.05;
+
     letter-spacing: -2px;
 
     font-weight: 800;
@@ -738,6 +841,7 @@ a {
 
 .support-heading h2 span {
     display: block;
+
     color: var(--primary-light);
 }
 
@@ -747,6 +851,7 @@ a {
     color: var(--text-muted);
 
     font-size: 15px;
+
     line-height: 1.7;
 }
 
@@ -758,7 +863,8 @@ a {
 .support-grid {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 20px;
 }
@@ -770,7 +876,10 @@ a {
 
     background: var(--white);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 24px;
 
     box-shadow: var(--shadow-sm);
@@ -805,13 +914,20 @@ a {
     border-radius: 14px;
 
     background: var(--pink-light);
+
     color: var(--primary);
 
     font-size: 20px;
 }
 
 .support-number {
-    color: rgba(67, 7, 107, 0.16);
+    color:
+        rgba(
+            67,
+            7,
+            107,
+            0.16
+        );
 
     font-size: 28px;
     font-weight: 800;
@@ -821,6 +937,7 @@ a {
     color: var(--text);
 
     font-size: 20px;
+
     line-height: 1.25;
 
     font-weight: 800;
@@ -832,6 +949,7 @@ a {
     color: var(--text-muted);
 
     font-size: 14px;
+
     line-height: 1.7;
 }
 
@@ -865,7 +983,13 @@ a {
         );
 
     box-shadow:
-        0 25px 70px rgba(67, 7, 107, 0.18);
+        0 25px 70px
+        rgba(
+            67,
+            7,
+            107,
+            0.18
+        );
 }
 
 .cta-box h2 {
@@ -873,9 +997,15 @@ a {
 
     color: var(--white);
 
-    font-size: clamp(32px, 4vw, 48px);
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            48px
+        );
 
     line-height: 1.1;
+
     letter-spacing: -1.5px;
 
     font-weight: 800;
@@ -884,7 +1014,13 @@ a {
 .cta-box p {
     margin-top: 10px;
 
-    color: rgba(255, 255, 255, 0.78);
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
 
     font-size: 15px;
 }
@@ -898,7 +1034,9 @@ a {
 .footer {
     background: #ffffff;
 
-    border-top: 1px solid #eadfee;
+    border-top:
+        1px solid
+        #eadfee;
 }
 
 .footer-inner {
@@ -922,6 +1060,7 @@ a {
 
 .footer p {
     color: #706579;
+
     font-size: 12px;
 }
 
@@ -935,13 +1074,7 @@ a {
 
 
 /* =========================================================
-   RESPONSIVE
-   STANDARD MENGIKUTI KEUNGGULAN
-   ========================================================= */
-
-
-/* =========================================================
-   ≤ 1200px
+   TABLET — 1200px
    ========================================================= */
 
 @media (max-width: 1200px) {
@@ -982,7 +1115,7 @@ a {
 
 
 /* =========================================================
-   ≤ 1000px
+   TABLET / SMALL LAPTOP — 1000px
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1001,7 +1134,9 @@ a {
 
     .navbar-button {
         min-height: 50px;
+
         padding: 14px 25px;
+
         font-size: 14px;
     }
 
@@ -1032,7 +1167,7 @@ a {
 
 
 /* =========================================================
-   ≤ 900px
+   TABLET — 900px
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -1051,11 +1186,13 @@ a {
 
     .about-hero-content {
         max-width: 720px;
+
         padding-block: 0;
     }
 
     .about-hero-content h1 {
         max-width: 720px;
+
         font-size: 58px;
     }
 
@@ -1065,11 +1202,13 @@ a {
 
     .about-hero-visual {
         min-height: auto;
+
         width: 100%;
     }
 
     .about-image-wrapper {
         width: 90%;
+
         margin-inline: auto;
 
         transform: rotate(-1deg);
@@ -1081,16 +1220,21 @@ a {
 
     .about-opportunity {
         right: 2%;
-        transform: scale(0.95) rotate(3deg);
+
+        transform:
+            scale(0.95)
+            rotate(3deg);
     }
 
     .about-partner {
         left: 2%;
+
         transform: scale(0.95);
     }
 
     .intro-container {
         grid-template-columns: 1fr;
+
         gap: 30px;
     }
 
@@ -1100,163 +1244,368 @@ a {
 
     .support-heading {
         grid-template-columns: 1fr;
+
         gap: 25px;
     }
 
     .support-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .cta-box {
         flex-direction: column;
+
         align-items: flex-start;
     }
 }
 
 
 /* =========================================================
-   ≤ 700px
-   MOBILE HEADER
-   STANDARD KEUNGGULAN
+   MOBILE — 700px
+   HEADER:
+   LOGO + HAMBURGER
    ========================================================= */
 
 @media (max-width: 700px) {
 
+    /* -----------------------------------------------------
+       CONTAINER
+       ----------------------------------------------------- */
+
     .container {
         width: calc(100% - 24px);
+
+        max-width: none;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        NAVBAR
-       ========================= */
+       ----------------------------------------------------- */
 
     .navbar {
+        position: relative;
+
+        z-index: 2000;
+
         min-height: auto;
+
         padding: 10px 0 8px;
     }
 
     .navbar-inner {
+        position: relative;
+
         width: calc(100% - 24px);
+
         min-height: 0;
 
-        display: grid;
+        display: flex;
 
-        grid-template-columns: auto 1fr;
-
-        grid-template-areas:
-            "logo button"
-            "menu menu";
+        flex-direction: row;
 
         align-items: center;
 
-        column-gap: 10px;
-        row-gap: 7px;
+        justify-content: space-between;
+
+        gap: 0;
 
         margin-inline: auto;
     }
 
 
-    /* LOGO */
+    /* -----------------------------------------------------
+       LOGO
+       ----------------------------------------------------- */
 
-    .logo {
-        grid-area: logo;
+    .navbar .logo {
+        display: flex;
 
         width: 62px;
         height: 62px;
+
+        flex-shrink: 0;
     }
 
-    .logo img {
+    .navbar .logo img {
         width: 62px;
         height: 62px;
 
-        display: block;
         object-fit: cover;
     }
 
 
-    /* BUTTON */
+    /* -----------------------------------------------------
+       HAMBURGER
+       ----------------------------------------------------- */
 
-    .navbar-button {
-        grid-area: button;
-
-        justify-self: end;
-
-        min-height: 38px;
-
-        padding: 10px 14px;
-
-        font-size: 10.5px;
-        line-height: 1;
-
-        white-space: nowrap;
-    }
-
-
-    /* MENU */
-
-    .nav-menu {
-        grid-area: menu;
-
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 3px 4px;
-
-        justify-content: initial;
-
-        overflow: visible;
-
-        white-space: normal;
-    }
-
-    .nav-menu a {
+    .navbar .menu-toggle {
         display: flex;
 
         align-items: center;
         justify-content: center;
 
-        min-height: 28px;
+        width: 42px;
+        height: 42px;
 
-        padding: 4px 2px;
+        margin-left: auto;
 
-        font-size: 10px;
-        line-height: 1.2;
-        font-weight: 600;
+        padding: 0;
+
+        border: none;
+        border-radius: 0;
+
+        background: transparent;
+
+        color: var(--primary);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 30px;
+        font-weight: 400;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 2100;
+    }
+
+    .navbar .menu-toggle:hover {
+        color: var(--primary-dark);
+
+        transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       CTA MOBILE = HIDDEN
+       ----------------------------------------------------- */
+
+    .navbar .navbar-button {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU PANEL
+       ----------------------------------------------------- */
+
+    .navbar .nav-menu {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+
+        width: min(82vw, 340px);
+
+        height: 100vh;
+        height: 100dvh;
+
+        margin: 0;
+
+        padding: 90px 25px 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        background: var(--primary);
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        white-space: normal;
+
+        transform: translateX(100%);
+
+        visibility: hidden;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        box-shadow:
+            -15px 0 40px
+            rgba(0, 0, 0, 0.20);
+
+        z-index: 2002;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU ACTIVE
+       ----------------------------------------------------- */
+
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+
+        visibility: visible;
+    }
+
+
+    /* -----------------------------------------------------
+       CLOSE BUTTON
+       ----------------------------------------------------- */
+
+    .navbar .menu-close {
+        position: absolute;
+
+        top: 20px;
+        right: 20px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        border-radius: 0;
+
+        background: transparent;
+
+        color: var(--white);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 40px;
+        font-weight: 300;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 2004;
+    }
+
+    .navbar .menu-close:hover {
+        color: var(--white);
+
+        transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU LINKS
+       ----------------------------------------------------- */
+
+    .navbar .nav-menu a {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        min-height: 58px;
+
+        margin: 0;
+
+        padding: 15px 5px;
+
+        border: none;
+
+        border-bottom:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.22
+            );
+
+        color: var(--white);
+
+        font-size: 18px;
+
+        font-weight: 700;
+
+        line-height: 1.3;
+
+        text-align: left;
 
         white-space: nowrap;
-        text-align: center;
     }
 
-    .nav-menu a::after {
-        bottom: 0;
-        height: 2px;
+    .navbar .nav-menu a::after {
+        display: none;
     }
 
-    /*
-       MENU:
-       1 = Tentang
-       2 = Kemitraan
-       3 = Keunggulan
-       4 = Cara Kerja
-       5 = FAQ
-    */
+    .navbar .nav-menu a:hover,
+    .navbar .nav-menu a.active {
+        color: var(--white);
 
-    .nav-menu a:nth-child(4) {
-        grid-column: 1;
-    }
-
-    .nav-menu a:nth-child(5) {
-        grid-column: 2;
+        background: transparent;
     }
 
 
-    /* =========================
-       HERO
-       ========================= */
+    /* -----------------------------------------------------
+       OVERLAY
+       ----------------------------------------------------- */
+
+    .navbar .menu-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        display: block;
+
+        width: 100vw;
+
+        height: 100vh;
+        height: 100dvh;
+
+        margin: 0;
+        padding: 0;
+
+        background:
+            rgba(
+                0,
+                0,
+                0,
+                0.55
+            );
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 2001;
+    }
+
+    .navbar .menu-overlay.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+       ===================================================== */
 
     .about-hero {
         padding: 55px 0 65px;
@@ -1268,6 +1617,7 @@ a {
         min-height: auto;
 
         display: flex;
+
         flex-direction: column;
 
         gap: 35px;
@@ -1275,6 +1625,7 @@ a {
 
     .about-hero-content {
         width: 100%;
+
         max-width: 100%;
 
         padding: 0;
@@ -1284,15 +1635,22 @@ a {
         margin-bottom: 20px;
 
         font-size: 11px;
+
         padding: 8px 13px;
     }
 
     .about-hero-content h1 {
         max-width: 100%;
 
-        font-size: clamp(38px, 9vw, 52px);
+        font-size:
+            clamp(
+                38px,
+                9vw,
+                52px
+            );
 
         line-height: 1.05;
+
         letter-spacing: -1.8px;
     }
 
@@ -1302,13 +1660,14 @@ a {
         margin-top: 20px;
 
         font-size: 14px;
+
         line-height: 1.7;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        HERO ACTIONS
-       ========================= */
+       ----------------------------------------------------- */
 
     .hero-actions {
         width: 100%;
@@ -1316,6 +1675,7 @@ a {
         margin-top: 25px;
 
         display: flex;
+
         flex-wrap: wrap;
 
         gap: 10px;
@@ -1330,24 +1690,26 @@ a {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        HERO BOTTOM INFO
-       ========================= */
+       ----------------------------------------------------- */
 
     .hero-bottom-info {
         gap: 25px;
 
         margin-top: 32px;
+
         padding-top: 20px;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        HERO IMAGE
-       ========================= */
+       ----------------------------------------------------- */
 
     .about-hero-visual {
         width: 100%;
+
         min-height: auto;
     }
 
@@ -1369,18 +1731,22 @@ a {
 
     .about-image {
         width: 100%;
+
         height: 360px;
 
         object-fit: cover;
+
+        border-radius: 28px;
     }
 
 
-    /* =========================
-       FLOATING CARD
-       ========================= */
+    /* -----------------------------------------------------
+       FLOATING CARDS
+       ----------------------------------------------------- */
 
     .about-opportunity {
         top: 55px;
+
         right: 8px;
 
         max-width: 190px;
@@ -1409,6 +1775,7 @@ a {
 
     .about-partner {
         left: 8px;
+
         bottom: 25px;
 
         max-width: 190px;
@@ -1434,9 +1801,9 @@ a {
     }
 
 
-    /* =========================
+    /* =====================================================
        INTRO
-       ========================= */
+       ===================================================== */
 
     .about-intro {
         padding-block: 65px;
@@ -1444,6 +1811,7 @@ a {
 
     .intro-container {
         display: flex;
+
         flex-direction: column;
 
         gap: 20px;
@@ -1455,6 +1823,7 @@ a {
         font-size: 38px;
 
         line-height: 1.08;
+
         letter-spacing: -1.3px;
     }
 
@@ -1466,13 +1835,14 @@ a {
         max-width: 100%;
 
         font-size: 14px;
+
         line-height: 1.75;
     }
 
 
-    /* =========================
+    /* =====================================================
        SUPPORT
-       ========================= */
+       ===================================================== */
 
     .support-section {
         padding-block: 65px;
@@ -1480,6 +1850,7 @@ a {
 
     .support-heading {
         display: flex;
+
         flex-direction: column;
 
         gap: 20px;
@@ -1493,16 +1864,19 @@ a {
         font-size: 40px;
 
         line-height: 1.05;
+
         letter-spacing: -1.5px;
     }
 
     .support-heading > p {
         max-width: 100%;
+
         font-size: 14px;
     }
 
     .support-grid {
         grid-template-columns: 1fr;
+
         gap: 16px;
     }
 
@@ -1515,9 +1889,9 @@ a {
     }
 
 
-    /* =========================
+    /* =====================================================
        CTA
-       ========================= */
+       ===================================================== */
 
     .about-cta {
         padding-block: 50px;
@@ -1537,6 +1911,7 @@ a {
 
     .cta-box h2 {
         font-size: 34px;
+
         line-height: 1.08;
     }
 
@@ -1549,9 +1924,9 @@ a {
     }
 
 
-    /* =========================
+    /* =====================================================
        FOOTER
-       ========================= */
+       ===================================================== */
 
     .footer-inner {
         min-height: auto;
@@ -1572,8 +1947,7 @@ a {
 
 
 /* =========================================================
-   ≤ 380px
-   STANDARD KEUNGGULAN
+   VERY SMALL PHONE — 380px
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -1588,30 +1962,39 @@ a {
 
     .navbar-inner {
         width: calc(100% - 20px);
-        row-gap: 6px;
     }
 
-    .logo {
+
+    /* LOGO */
+
+    .navbar .logo,
+    .navbar .logo img {
         width: 58px;
         height: 58px;
     }
 
-    .logo img {
-        width: 58px;
-        height: 58px;
+
+    /* HAMBURGER */
+
+    .navbar .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 28px;
     }
 
-    .navbar-button {
-        padding: 9px 12px;
-        font-size: 10px;
+
+    /* MOBILE PANEL */
+
+    .navbar .nav-menu {
+        width: 84vw;
+
+        padding-left: 22px;
+        padding-right: 22px;
     }
 
-    .nav-menu {
-        gap: 3px;
-    }
-
-    .nav-menu a {
-        font-size: 9.5px;
+    .navbar .nav-menu a {
+        font-size: 17px;
     }
 
 
@@ -1625,6 +2008,7 @@ a {
         font-size: 32px;
 
         line-height: 1.07;
+
         letter-spacing: -1.2px;
     }
 
@@ -1650,16 +2034,26 @@ a {
 
     .about-partner {
         transform: scale(0.82);
+
         transform-origin: left bottom;
     }
+
+
+    /* INTRO */
 
     .intro-heading h2 {
         font-size: 32px;
     }
 
+
+    /* SUPPORT */
+
     .support-heading h2 {
         font-size: 34px;
     }
+
+
+    /* CTA */
 
     .cta-box h2 {
         font-size: 29px;
