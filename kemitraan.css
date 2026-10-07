@@ -68,8 +68,11 @@ body {
     color: var(--text);
 
     line-height: 1.6;
-
     overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 img {
@@ -80,6 +83,10 @@ img {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+button {
+    font: inherit;
 }
 
 
@@ -100,7 +107,6 @@ a {
 
 /* =========================================================
    BUTTON
-   STANDARD: KEUNGGULAN
 ========================================================= */
 
 .btn {
@@ -152,9 +158,7 @@ a {
 
 .btn-outline {
     border: 1.5px solid var(--primary);
-
     color: var(--primary);
-
     background: transparent;
 }
 
@@ -175,12 +179,12 @@ a {
 
 /* =========================================================
    NAVBAR
-   100% MENGIKUTI STANDAR KEUNGGULAN
+   STANDARD KEUNGGULAN
 ========================================================= */
 
 .navbar {
     position: relative;
-    z-index: 100;
+    z-index: 2000;
 
     background: var(--pink);
 
@@ -231,7 +235,7 @@ a {
 
 
 /* =========================================================
-   NAVIGATION
+   NAVIGATION DESKTOP
 ========================================================= */
 
 .nav-menu {
@@ -293,6 +297,17 @@ a {
 
 .nav-menu a.active::after {
     width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU ELEMENTS
+========================================================= */
+
+.menu-toggle,
+.menu-close,
+.menu-overlay {
+    display: none;
 }
 
 
@@ -832,48 +847,6 @@ a {
 
 
 /* =========================================================
-   PACKAGE LINK
-========================================================= */
-
-.package-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    width: fit-content;
-
-    gap: 8px;
-
-    margin-top: 30px;
-
-    color: var(--primary);
-
-    font-size: 14px;
-    font-weight: 800;
-
-    text-decoration: none;
-
-    transition:
-        color 0.2s ease;
-}
-
-.package-link span {
-    display: inline-block;
-
-    transition:
-        transform 0.2s ease;
-}
-
-.package-link:hover {
-    color: var(--primary-light);
-}
-
-.package-link:hover span {
-    transform: translateX(5px);
-}
-
-
-/* =========================================================
    BENEFIT SECTION
 ========================================================= */
 
@@ -1043,121 +1016,6 @@ a {
 
 
 /* =========================================================
-   CTA
-========================================================= */
-
-.partner-cta {
-    padding: 0 0 100px;
-}
-
-.cta-box {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
-
-    padding: 60px;
-
-    border-radius: 32px;
-
-    background: var(--primary);
-
-    color: var(--white);
-
-    overflow: hidden;
-
-    position: relative;
-}
-
-.cta-box::after {
-    content: "";
-
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    right: -100px;
-    top: -120px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.06
-        );
-}
-
-.cta-box > div {
-    position: relative;
-
-    z-index: 1;
-}
-
-.cta-box .eyebrow {
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.12
-        );
-
-    color: var(--white);
-}
-
-.cta-box h2 {
-    max-width: 750px;
-
-    margin-top: 18px;
-
-    font-size:
-        clamp(
-            34px,
-            4vw,
-            54px
-        );
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
-}
-
-.cta-box h2 span {
-    color: var(--pink);
-}
-
-.cta-box p {
-    max-width: 620px;
-
-    margin-top: 18px;
-
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.78
-        );
-
-    line-height: 1.8;
-}
-
-.cta-box .btn {
-    position: relative;
-
-    z-index: 1;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
    FOOTER
    STANDARD WHITE MINIMAL
 ========================================================= */
@@ -1207,7 +1065,6 @@ a {
 
 /* =========================================================
    TABLET / DESKTOP RESPONSIVE
-   STANDARD KEUNGGULAN
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -1261,7 +1118,6 @@ a {
 
 @media (max-width: 1000px) {
 
-    /* NAVBAR */
     .navbar-inner {
         grid-template-columns:
             auto
@@ -1287,7 +1143,6 @@ a {
         font-size: 14px;
     }
 
-    /* PAGE */
     .partner-hero-grid {
         gap: 35px;
     }
@@ -1326,8 +1181,7 @@ a {
         gap: 25px;
     }
 
-    .decision-box,
-    .cta-box {
+    .decision-box {
         flex-direction: column;
 
         align-items: flex-start;
@@ -1337,7 +1191,7 @@ a {
 
 /* =========================================================
    MOBILE
-   HEADER = PERSIS STANDAR KEUNGGULAN
+   HAMBURGER MENU
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -1357,6 +1211,8 @@ a {
         min-height: auto;
 
         padding: 10px 0 8px;
+
+        z-index: 2000;
     }
 
     .navbar-inner {
@@ -1364,30 +1220,24 @@ a {
 
         min-height: 0;
 
-        display: grid;
-
-        grid-template-columns:
-            auto
-            1fr;
-
-        grid-template-areas:
-            "logo button"
-            "menu menu";
+        display: flex;
 
         align-items: center;
+        justify-content: space-between;
 
-        column-gap: 10px;
-        row-gap: 7px;
+        gap: 12px;
     }
 
 
-    /* LOGO */
+    /* =========================
+       LOGO
+    ========================= */
 
     .logo {
-        grid-area: logo;
-
         width: 62px;
         height: 62px;
+
+        flex-shrink: 0;
     }
 
     .logo img {
@@ -1396,88 +1246,236 @@ a {
     }
 
 
-    /* CTA */
+    /* =========================
+       HAMBURGER
+    ========================= */
 
-    .navbar-button {
-        grid-area: button;
-
-        justify-self: end;
-
-        min-height: 38px;
-
-        padding: 10px 14px;
-
-        font-size: 10.5px;
-
-        line-height: 1;
-
-        white-space: nowrap;
-    }
-
-
-    /* MENU */
-
-    .nav-menu {
-        grid-area: menu;
-
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(
-                3,
-                1fr
-            );
-
-        gap: 3px 4px;
-
-        justify-content: initial;
-
-        overflow: visible;
-
-        white-space: normal;
-    }
-
-    .nav-menu a {
+    .menu-toggle {
         display: flex;
 
         align-items: center;
         justify-content: center;
 
-        min-height: 28px;
+        width: 42px;
+        height: 42px;
 
-        padding: 4px 2px;
+        margin-left: auto;
 
-        font-size: 10px;
+        padding: 0;
 
-        line-height: 1.2;
+        border: 0;
+        border-radius: 10px;
 
-        font-weight: 600;
-
-        white-space: nowrap;
-
-        text-align: center;
-    }
-
-    .nav-menu a.active {
-        font-weight: 700;
+        background: transparent;
 
         color: var(--primary);
+
+        font-size: 30px;
+        line-height: 1;
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+        background: rgba(67, 7, 107, 0.08);
+    }
+
+    .menu-toggle:active {
+        transform: scale(0.94);
+    }
+
+
+    /* =========================
+       HIDE DESKTOP CTA
+    ========================= */
+
+    .navbar-button {
+        display: none;
+    }
+
+
+    /* =========================
+       MOBILE SIDE MENU
+    ========================= */
+
+    .nav-menu {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: min(82vw, 340px);
+        height: 100dvh;
+
+        padding:
+            90px
+            25px
+            30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        background: var(--primary);
+
+        box-shadow:
+            -15px 0 40px
+            rgba(0, 0, 0, 0.18);
+
+        overflow-y: auto;
+
+        transform: translateX(100%);
+
+        visibility: hidden;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 2100;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+
+        visibility: visible;
+    }
+
+
+    /* =========================
+       CLOSE BUTTON
+    ========================= */
+
+    .menu-close {
+        position: absolute;
+
+        top: 22px;
+        right: 20px;
+
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+
+        border: 0;
+        border-radius: 10px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        color: var(--white);
+
+        font-size: 34px;
+        font-weight: 300;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .menu-close:hover {
+        background: rgba(255, 255, 255, 0.16);
+
+        transform: rotate(90deg);
+    }
+
+
+    /* =========================
+       MOBILE NAV LINKS
+    ========================= */
+
+    .nav-menu a {
+        display: flex;
+
+        align-items: center;
+
+        min-height: 52px;
+
+        padding: 12px 4px;
+
+        color: var(--white);
+
+        font-size: 18px;
+        font-weight: 600;
+
+        white-space: normal;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.10);
+
+        transition:
+            color 0.2s ease,
+            padding-left 0.2s ease;
     }
 
     .nav-menu a::after {
-        bottom: 0;
-
-        height: 2px;
+        display: none;
     }
 
-    .nav-menu a:nth-child(4) {
-        grid-column: 1;
+    .nav-menu a:hover {
+        color: var(--pink);
+
+        padding-left: 8px;
     }
 
-    .nav-menu a:nth-child(5) {
-        grid-column: 2;
+    .nav-menu a.active {
+        color: var(--pink);
+
+        font-weight: 700;
+    }
+
+
+    /* =========================
+       OVERLAY
+    ========================= */
+
+    .menu-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        display: block;
+
+        background:
+            rgba(25, 10, 35, 0.52);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 2050;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
     }
 
 
@@ -1594,23 +1592,6 @@ a {
 
 
     /* =========================
-       CTA
-    ========================= */
-
-    .partner-cta {
-        padding-bottom: 70px;
-    }
-
-    .cta-box {
-        padding: 38px 28px;
-    }
-
-    .cta-box h2 {
-        font-size: 38px;
-    }
-
-
-    /* =========================
        FOOTER
     ========================= */
 
@@ -1708,9 +1689,7 @@ a {
     .navbar-inner {
         width: calc(100% - 20px);
 
-        column-gap: 8px;
-
-        row-gap: 6px;
+        gap: 8px;
     }
 
     .logo {
@@ -1723,21 +1702,34 @@ a {
         height: 58px;
     }
 
-    .navbar-button {
-        min-height: 36px;
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
 
-        padding: 9px 12px;
-
-        font-size: 10px;
+        font-size: 28px;
     }
 
     .nav-menu {
-        gap: 3px;
+        width: 84vw;
+
+        padding:
+            85px
+            22px
+            25px;
     }
 
     .nav-menu a {
-        min-height: 27px;
+        min-height: 48px;
 
-        font-size: 9.5px;
+        font-size: 17px;
+    }
+
+    .menu-close {
+        top: 20px;
+        right: 17px;
+    }
+
+    .partner-hero-content h1 {
+        font-size: 36px;
     }
 }
