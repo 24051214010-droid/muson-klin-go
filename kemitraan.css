@@ -702,13 +702,14 @@ button {
         rgba(109, 41, 149, 0.2);
 }
 
+
+/* =========================================================
+   FULL SERVICE CARD
+   WHITE - NO DIFFERENT BACKGROUND
+========================================================= */
+
 .package-card.featured {
-    background:
-        linear-gradient(
-            145deg,
-            #fff7fd 0%,
-            #f9eafa 100%
-        );
+    background: var(--white);
 }
 
 .package-card.featured::before {
@@ -737,6 +738,11 @@ button {
     margin-bottom: 38px;
 }
 
+
+/* =========================================================
+   PACKAGE ICON
+========================================================= */
+
 .package-icon {
     width: 60px;
     height: 60px;
@@ -755,29 +761,17 @@ button {
     font-weight: 800;
 }
 
-.package-badge {
-    display: inline-flex;
 
-    align-items: center;
-    justify-content: center;
+/* =========================================================
+   PACKAGE BADGE
+   HIDDEN - REKOMENDASI & FLEKSIBEL
+========================================================= */
 
-    min-height: 32px;
-
-    padding: 0 14px;
-
-    border-radius: 999px;
-
-    background: var(--primary);
-    color: var(--white);
-
-    font-size: 10px;
-    font-weight: 800;
-}
-
+.package-badge,
 .package-badge.soft {
-    background: var(--pink-light);
-    color: var(--primary);
+    display: none;
 }
+
 
 .package-card h3 {
     font-size: 28px;
@@ -1658,12 +1652,6 @@ button {
 
     .package-card h3 {
         font-size: 25px;
-    }
-
-    .package-badge {
-        font-size: 9px;
-
-        padding: 0 10px;
     }
 
     .section-heading h2 {
